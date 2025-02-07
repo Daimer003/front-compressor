@@ -20,7 +20,7 @@ export default function PdfCompressor() {
     formData.append("pdf", file);
     
     try {
-      const response = await fetch("http://compressor-production-4115.up.railway.app/api/compress", {
+      const response = await fetch("https://compressor-production-4115.up.railway.app/api/compress", {
         method: "POST",
         body: formData,
       });
