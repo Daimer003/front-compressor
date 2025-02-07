@@ -15,22 +15,29 @@ export default function PdfCompressor() {
     if (!file) return alert("Selecciona un archivo PDF");
     setLoading(true);
     setDownloadUrl(null);
-    
+  
     const formData = new FormData();
     formData.append("pdf", file);
+  
+    const controller = new AbortController();
+    const signal = controller.signal;
     
     try {
-      const response = await fetch("https://compressor-production-4115.up.railway.app/api/compress", {
-        method: "POST",
-        body: formData,
-      });
-      
+      const response = await fetch(
+        "http://compressor-production-4115.up.railway.app/api/compress",
+        { method: "POST", body: formData, signal }
+      );
+  
       if (!response.ok) throw new Error("Error al comprimir el PDF");
-      
+  
       const blob = await response.blob();
       setDownloadUrl(URL.createObjectURL(blob));
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      if (error.name === "AbortError") {
+        console.warn("La solicitud fue cancelada");
+      } else {
+        alert(error);
+      }
     } finally {
       setLoading(false);
     }
