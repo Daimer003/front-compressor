@@ -24,7 +24,7 @@ export default function PdfCompressor() {
     
     try {
       const response = await fetch(
-        "http://compressor-production-4115.up.railway.app/api/compress",
+        "https://compressor-production-4115.up.railway.app/api/compress",
         { method: "POST", body: formData, signal }
       );
   
