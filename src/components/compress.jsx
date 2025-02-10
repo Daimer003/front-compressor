@@ -39,7 +39,7 @@ export default function PdfCompressor() {
   };
 
   return (
-    <div className="flex items-center justify-center w-full min-h-screen bg-[#fffaed]">
+    <div className="flex items-center justify-center w-full min-h-screen bg-[#fffaed] p-">
       <div className="p-6 bg-white rounded-lg shadow-lg w-96 text-center">
         <div className="mb-4">
           <input
@@ -61,7 +61,7 @@ export default function PdfCompressor() {
           onClick={uploadPDF}
           disabled={loading}
           id="cvBtn"
-          className="w-full [&_svg]:size-8 px-4 md:px-8 h-14 cv-btn flex-1 text-n700 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark"
+          className="w-full  px-4 md:px-8 h-14 flex-1 text-n700 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark rounded-xl"
         >
           
           Comprimir pdf
