@@ -1,0 +1,24 @@
+---
+const socialLinks = [
+  { name: "Twitter", href: "https://twitter.com", icon: "🐦" },
+  { name: "GitHub", href: "https://github.com", icon: "🐙" },
+  { name: "LinkedIn", href: "https://linkedin.com", icon: "💼" }
+];
+---
+
+<nav class="w-full bg-[#fad144] text-white px-6 py-4 flex items-center justify-between">
+  <!-- Logo -->
+  <a href="/" class="flex items-center space-x-2">
+    <img src="/logo.png" alt="Logo" class="h-10 w-auto" />
+    <span class="text-xl text-black font-semibold">LitePdfs</span>
+  </a>
+
+  <!-- Redes sociales -->
+  <div class="flex space-x-4">
+    {socialLinks.map(link => (
+      <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 text-xl">
+        {link.icon}
+      </a>
+    ))}
+  </div>
+</nav>

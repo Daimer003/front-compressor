@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Button } from "./ui/button";
+
 
 export default function PdfCompressor() {
   const [file, setFile] = useState(null);
@@ -37,9 +39,8 @@ export default function PdfCompressor() {
   };
 
   return (
-    <div className="flex items-center justify-center w-full min-h-screen bg-gray-600">
+    <div className="flex items-center justify-center w-full min-h-screen bg-[#fffaed]">
       <div className="p-6 bg-white rounded-lg shadow-lg w-96 text-center">
-        <h2 className="text-xl font-semibold mb-4 text-red">Comprimir PDF</h2>
         <div className="mb-4">
           <input
             type="file"
@@ -53,15 +54,19 @@ export default function PdfCompressor() {
                       hover:file:bg-blue-100"
           />
         </div>
-        <button
+
+
+
+        <Button
           onClick={uploadPDF}
-          className={`w-full px-4 py-2 rounded-lg text-white font-medium transition ${
-            loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-          }`}
           disabled={loading}
+          id="cvBtn"
+          className="w-full [&_svg]:size-8 px-4 md:px-8 h-14 cv-btn flex-1 text-n700 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark"
         >
-          {loading ? "Comprimiendo..." : "Comprimir PDF"}
-        </button>
+          
+          Comprimir pdf
+        </Button>
+
         {downloadUrl && (
           <div className="mt-4">
             <a
@@ -77,4 +82,3 @@ export default function PdfCompressor() {
     </div>
   );
 }
-
