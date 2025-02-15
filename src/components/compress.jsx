@@ -22,10 +22,10 @@ export default function PdfCompressor() {
     formData.append("pdf", file);
 
     try {
-      const response = await fetch(
-        "https://compressor-production-4115.up.railway.app/api/compress",
-        { method: "POST", body: formData }
-      );
+      const response = await fetch(import.meta.env.PUBLIC_API_URL, {
+        method: "POST",
+        body: formData,
+      });
 
       if (!response.ok) throw new Error("Error al comprimir el PDF");
 
@@ -43,9 +43,7 @@ export default function PdfCompressor() {
       <div className="p-6 bg-[#ffffff95] rounded-xl shadow-lg  w-full  md:w-96 text-center">
         {/* Contenedor del input con icono */}
         <div className="mb-4">
-          <label
-            className="flex flex-col items-center justify-center w-full border-2 border-dashed border-red-500 rounded-lg cursor-pointer p-4 bg-gray-100 hover:bg-gray-200 transition"
-          >
+          <label className="flex flex-col items-center justify-center w-full border-2 border-dashed border-red-500 rounded-lg cursor-pointer p-4 bg-gray-100 hover:bg-gray-200 transition">
             <Upload size={24} className="text-red-500 mb-2" />
             <span className="text-gray-600 font-medium">
               {file ? "Archivo seleccionado" : "Subir PDF"}

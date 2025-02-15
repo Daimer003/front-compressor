@@ -5,25 +5,33 @@ import Navbar from "@/components/shared/navbar.astro";
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>LitePdfs</title>
-	</head>
-	<body class="flex flex-col items-center justify-center w-fullh-screen min-h-full bg-gradient-to-br from-[#ffd56b44] via-[#FFF3CC] to-[#e1251b2d]">
-		<Navbar />
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Tu herramienta rápida y segura para comprimir PDFs de manera fácil y
+      eficiente. 📄✨ Reduce el tamaño de tus archivos PDF sin perder calidad y
+      optimiza el espacio en tu dispositivo."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>LitePdfs</title>
+  </head>
+  <body
+    class="flex flex-col items-center justify-center w-fullh-screen min-h-full bg-gradient-to-br from-[#ffd56b44] via-[#FFF3CC] to-[#e1251b2d]"
+  >
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
