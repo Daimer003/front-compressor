@@ -1,24 +1,39 @@
 ---
+import Instagram from "../icons/Instagram.astro";
+import Facebook from "../icons/Facebook.astro";
+
 const socialLinks = [
-  { name: "Twitter", href: "https://twitter.com", icon: "🐦" },
-  { name: "GitHub", href: "https://github.com", icon: "🐙" },
-  { name: "LinkedIn", href: "https://linkedin.com", icon: "💼" }
+  { name: "Facebook", href: "#", icon: Facebook },
+  { name: "Instagram", href: "#", icon: Instagram },
 ];
 ---
 
-<nav class="w-full bg-[#fad144] text-white px-6 py-4 flex items-center justify-between">
+<nav
+  class="flex absolute w-full top-0 text-white px-6 py-4 items-center justify-between border-b-2 border-gray-100 
+         bg-white/30 backdrop-blur-md"
+>
   <!-- Logo -->
   <a href="/" class="flex items-center space-x-2">
-    <img src="/logo.png" alt="Logo" class="h-10 w-auto" />
-    <span class="text-xl text-black font-semibold">LitePdfs</span>
+    <img src="/assets/logo-litepdf.webp" alt="Logo" class="h-10 w-auto" />
+    <span class="text-lg text-black font-medium">Litepdf</span>
   </a>
 
   <!-- Redes sociales -->
   <div class="flex space-x-4">
-    {socialLinks.map(link => (
-      <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 text-xl">
-        {link.icon}
-      </a>
-    ))}
+    {
+      socialLinks.map((link) => {
+        const Icon = link.icon;
+        return (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-red-400 text-xl  text-gray-900 "
+          >
+            <Icon />
+          </a>
+        );
+      })
+    }
   </div>
 </nav>

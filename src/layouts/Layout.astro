@@ -1,4 +1,5 @@
 ---
+import Footer from "@/components/shared/footer.astro";
 import Navbar from "@/components/shared/navbar.astro";
 ---
 
@@ -11,9 +12,10 @@ import Navbar from "@/components/shared/navbar.astro";
 		<meta name="generator" content={Astro.generator} />
 		<title>LitePdfs</title>
 	</head>
-	<body>
+	<body class="flex flex-col items-center justify-center w-fullh-screen min-h-full bg-gradient-to-br from-[#ffd56b44] via-[#FFF3CC] to-[#e1251b2d]">
 		<Navbar />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
